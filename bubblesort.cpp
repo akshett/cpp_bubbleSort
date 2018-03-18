@@ -1,13 +1,9 @@
 #include <iostream>
 #include <algorithm>
 
-int main()
+void bubbleSort(int* const arr, int length)
 {
-	const int length(9);
-	int arr[length] = {6,3,2,9,7,1,5,4,8};
-
 	int iter_end(0);
-
 	for (int i = length-1; i > 0; --i)
 	{
 		bool isswap = false;
@@ -26,6 +22,23 @@ int main()
 			break;
 		}
 	}
+}
+
+int main()
+{
+	int length;
+	std::cout << "Enter size of the array: " << '\n';
+	std::cin >> length;
+	
+	int arr[length];
+
+	std::cout << "Enter array elements: " << '\n';
+	for (int i = 0; i < length; ++i)
+	{
+		std::cin >> arr[i];
+	}
+
+	bubbleSort(arr, length);
 
 	for (int i =0; i< length; ++i)
 		std::cout << arr[i] << " ";
